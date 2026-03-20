@@ -4,6 +4,59 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(251, 191, 36, 0.5);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +71,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #f8fafc;
   color: #1e293b;
+  overflow-x: hidden;
 }
 
 .container {
@@ -25,17 +79,106 @@ body {
 }
 
 .btn-primary {
-  @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-900 transition duration-300;
+  @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-900 transition duration-300 transform hover:scale-105 active:scale-95 shadow-lg;
 }
 
 .btn-secondary {
-  @apply bg-secondary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-amber-400 transition duration-300;
+  @apply bg-secondary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-amber-400 transition duration-300 transform hover:scale-105 active:scale-95 shadow-lg;
 }
 
 .section-title {
   @apply text-4xl font-bold text-center mb-12 text-primary;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .card {
-  @apply bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300;
+  @apply bg-white rounded-lg shadow-lg p-6 hover:shadow-2xl transition duration-300;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Stagger animations for cards */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Gradient text effect */
+.gradient-text {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+/* Badge styling */
+.badge {
+  @apply inline-block px-3 py-1 rounded-full text-xs font-semibold;
+}
+
+.badge-primary {
+  @apply badge bg-blue-100 text-primary;
+}
+
+.badge-success {
+  @apply badge bg-green-100 text-green-700;
+}
+
+.badge-warning {
+  @apply badge bg-yellow-100 text-yellow-700;
+}
+
+/* Enhanced form inputs */
+input, textarea, select {
+  @apply border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300;
+}
+
+input:focus, textarea:focus, select:focus {
+  @apply shadow-lg;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+  @apply transition duration-300 ease-in-out;
+}
+
+/* Animation utility classes */
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out forwards;
+}
+
+/* Responsive text sizes */
+@media (max-width: 640px) {
+  .section-title {
+    @apply text-2xl;
+  }
+  
+  h1 {
+    @apply text-2xl;
+  }
+  
+  h2 {
+    @apply text-xl;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    @apply hidden;
+  }
 }

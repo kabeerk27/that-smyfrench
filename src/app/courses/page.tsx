@@ -98,10 +98,13 @@ export default function CoursesPage() {
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-secondary to-amber-300 text-primary rounded-lg p-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Special Offers Available</h2>
-          <p className="mb-6 text-lg">Early bird discounts • Group batch rates • Flexible payment plans</p>
-          <a href="/contact" className="btn-primary bg-primary text-white">Schedule a Free Demo Class</a>
+        <div className="mt-16 bg-gradient-to-r from-secondary to-amber-300 text-primary rounded-lg p-8 text-center transform hover:scale-105 transition-transform duration-300">
+          <h2 className="text-3xl font-bold mb-4">Ready to Start?</h2>
+          <p className="mb-6 text-lg font-semibold">All courses include comprehensive materials, lifetime access, and personalized support</p>
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <a href="/contact" className="btn-primary bg-primary text-white">Schedule a Free Demo Class</a>
+            <a href="/contact" className="btn-secondary">Get Course Details</a>
+          </div>
         </div>
       </div>
     </main>
