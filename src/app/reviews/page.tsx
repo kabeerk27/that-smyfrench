@@ -1,8 +1,7 @@
 'use client';
-import AddReview from '@/components/AddReview';
 
 import { useState } from 'react';
-
+import AddReview from '@/components/AddReview';
 export default function ReviewsPage() {
   const allReviews = [
     {
