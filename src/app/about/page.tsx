@@ -77,9 +77,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: "Krystal Johnson",
+                name: "Saif Arish Khan",
                 role: "Founder & Lead Instructor",
-                bio: "15+ years of French teaching experience. B.A. in French, M.Ed. in Education.",
+                bio: "5+ years of French teaching experience. B.A. in French, M.Ed. in Education.",
                 background: "Senior educator with proven track record"
               },
               {

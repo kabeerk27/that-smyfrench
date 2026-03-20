@@ -3,7 +3,7 @@
 export default function InstructorProfiles() {
   const instructors = [
     {
-      name: "Krystal Johnson",
+      name: "Saif Arish Khan",
       role: "Founder & Lead Instructor",
       specialty: "TEF/TCF Specialist",
       bio: "15+ years of teaching experience. B.A. in French, M.Ed. in Education. Passionate about making French accessible to everyone.",
@@ -97,9 +97,9 @@ export default function InstructorProfiles() {
                 </div>
               </div>
 
-              <button className="w-full btn-primary text-sm py-2">
+            {/*} <button className="w-full btn-primary text-sm py-2">
                 View Profile
-              </button>
+              </button> */}
             </div>
           ))}
         </div>
