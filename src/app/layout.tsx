@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "That's My French - Learn French with Expert Coaching",
   description: "Professional French language coaching for TEF/TCF, DELF/DALF. Join hundreds of successful students.",
   icons: {
-    icon: "/icon.jpeg",
+    icon: "/logo.jpeg",
   },
 };
 
