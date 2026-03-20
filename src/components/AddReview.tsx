@@ -1,37 +1,31 @@
-"use client";
-import React, { useState } from 'react';
+'use client';
+import React, { useRef } from 'react';
+import { submitReview } from '@/app/lib/actions';
 
 export default function AddReview() {
-  const [review, setReview] = useState({ name: '', rating: '5', message: '' });
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // This formats the message for your WhatsApp
-    const whatsappMessage = `Hi! I'd like to leave a review for That is My French:%0A%0A*Name:* ${review.name}%0A*Rating:* ${review.rating}/5 stars%0A*Review:* ${review.message}`;
-    
-    // Replace with your actual WhatsApp number
-    window.open(`https://wa.me/918979903752?text=${whatsappMessage}`, '_blank');
-  };
+  async function handleAction(formData: FormData) {
+    const result = await submitReview(formData);
+    if (result.success) {
+      alert("Merci! Your review has been posted.");
+      formRef.current?.reset(); // Clears the form
+    } else {
+      alert("Oops! Something went wrong. Try again.");
+    }
+  }
 
   return (
-    <section className="bg-gray-50 p-8 rounded-2xl border border-gray-200 mt-10">
-      <h3 className="text-2xl font-bold text-blue-900 mb-4">Write a Review</h3>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <section className="bg-white p-8 rounded-2xl shadow-sm border mt-10 text-black">
+      <h3 className="text-2xl font-bold mb-4 text-blue-900">Write a Review</h3>
+      <form ref={formRef} action={handleAction} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">Your Name</label>
-          <input 
-            type="text" required 
-            className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 text-black"
-            onChange={(e) => setReview({...review, name: e.target.value})}
-          />
+          <input name="name" type="text" required className="w-full p-2 border rounded-lg bg-white text-black" />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">Rating</label>
-          <select 
-            className="w-full p-2 border rounded-lg text-black"
-            onChange={(e) => setReview({...review, rating: e.target.value})}
-          >
+          <select name="rating" className="w-full p-2 border rounded-lg bg-white text-black">
             <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
             <option value="4">⭐⭐⭐⭐ (Good)</option>
             <option value="3">⭐⭐⭐ (Average)</option>
@@ -39,14 +33,10 @@ export default function AddReview() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">Your Experience</label>
-          <textarea 
-            required rows={4}
-            className="w-full p-2 border rounded-lg text-black"
-            onChange={(e) => setReview({...review, message: e.target.value})}
-          ></textarea>
+          <textarea name="message" required rows={4} className="w-full p-2 border rounded-lg bg-white text-black"></textarea>
         </div>
-        <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition">
-          Submit Review via WhatsApp
+        <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700">
+          Post Review Instantly
         </button>
       </form>
     </section>
