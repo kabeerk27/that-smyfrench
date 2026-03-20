@@ -1,3 +1,4 @@
+import AddReview from '@/components/AddReview';
 'use client';
 
 import { useState } from 'react';
@@ -198,6 +199,9 @@ export default function ReviewsPage() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="max-w-2xl mx-auto mb-16 px-4">
+        <AddReview />
         </div>
 
         {/* CTA Section */}
