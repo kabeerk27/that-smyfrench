@@ -1,5 +1,5 @@
-import AddReview from '@/components/AddReview';
 'use client';
+import AddReview from '@/components/AddReview';
 
 import { useState } from 'react';
 
