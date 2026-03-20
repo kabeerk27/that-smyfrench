@@ -5,7 +5,10 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "That's My French - Learn French with Expert Coaching",
-  description: "Professional French language coaching for TEFF, ICT, and CLB 7+ exams. Join hundreds of successful students.",
+  description: "Professional French language coaching for TEF/TCF, DELF/DALF. Join hundreds of successful students.",
+  icons: {
+    icon: "/icon.jpeg",
+  },
 };
 
 export default function RootLayout({
