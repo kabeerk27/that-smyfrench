@@ -5,38 +5,31 @@ export default function InstructorProfiles() {
     {
       name: "Saif Arish Khan",
       role: "Founder & Lead Instructor",
+      image: "/arish.jpg", 
       specialty: "TEF/TCF Specialist",
-      bio: "15+ years of teaching experience. B.A. in French, M.Ed. in Education. Passionate about making French accessible to everyone.",
+      bio: "5+ years of teaching experience. B.A. in French, M.Ed. in Education. Passionate about making French accessible to everyone.",
       rating: 4.9,
       students: 850,
       courses: ["TEF/TCF Intensive", "Advanced Pronunciation"],
       highlighted: true
     },
     {
-      name: "Michel Dubois",
-      role: "Senior Instructor",
-      specialty: "Conversational Fluency",
-      bio: "Native French speaker with 12+ years teaching experience. Specializes in helping students overcome speaking anxiety.",
-      rating: 4.8,
-      students: 620,
-      courses: ["Conversational French", "Business French"],
-      highlighted: false
-    },
-    {
-      name: "Emma Toulouse",
+      name: "Divya Mahey",
       role: "Exam Preparation Coach",
+      image: "/divya.jpg",
       specialty: "DELF/DALF Expert",
-      bio: "Certified language coach with focus on exam preparation. 10+ years helping students achieve their certification goals.",
+      bio: "Certified language coach with focus on exam preparation. 4+ years helping students achieve their certification goals.",
       rating: 5.0,
       students: 510,
       courses: ["DELF/DALF", "Grammar Mastery"],
       highlighted: false
     },
     {
-      name: "Pierre Leclerc",
-      role: "Conversation Coach",
+      name: "Babita Chaudhary",
+      role: "B1 B2 Trainer",
+      image: "/Babita.jpeg",
       specialty: "Cultural Immersion",
-      bio: "Expert in French culture and modern conversational techniques. Makes learning fun and engaging for all levels.",
+      bio: "Expert in French B1 and B2 levels. Makes learning fun and engaging for all levels.",
       rating: 4.9,
       students: 430,
       courses: ["Conversational French", "Cultural French"],
@@ -61,9 +54,14 @@ export default function InstructorProfiles() {
               }`}
             >
               {/* Avatar placeholder */}
-              <div className="bg-gradient-to-br from-primary to-blue-800 h-32 flex items-center justify-center mb-4">
-                <div className="text-6xl">👨‍🏫</div>
-              </div>
+            {/* Instructor Photo */}
+            <div className="h-48 w-full mb-4 overflow-hidden rounded-t-lg">
+            <img 
+                src={instructor.image} 
+                alt={instructor.name} 
+                className="w-full h-full object-cover" 
+            />
+            </div>
 
               <h3 className="text-xl font-bold text-primary mb-1">{instructor.name}</h3>
               <p className="text-secondary font-semibold text-sm mb-2">{instructor.role}</p>

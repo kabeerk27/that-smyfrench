@@ -18,7 +18,7 @@ export default function CoursesPage() {
         "Lifetime resource access"
       ],
       prerequisite: "Basic French knowledge (A2-B1 level)",
-      batchSize: "Small batches (6-8 students)"
+      batchSize: "Small batches (3-4 students)"
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ export default function CoursesPage() {
         "Personalized feedback"
       ],
       prerequisite: "A2-B1 French level",
-      batchSize: "Small batches (6-8 students)"
+      batchSize: "Small batches (3-4 students)"
     }
 ];
     return (

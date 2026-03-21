@@ -55,16 +55,16 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4 text-secondary">Get in Touch</h4>
             <p className="text-blue-100 mb-2">
-              <a href="mailto:info@thatsmyfrench.com" className="hover:text-secondary transition duration-300">
-                📧 info@thatsmyfrench.com
+              <a href="mailto:thatismyfrench@gmail.com" className="hover:text-secondary transition duration-300">
+                📧 thatismyfrench@gmail.com
               </a>
             </p>
             <p className="text-blue-100 mb-2">
               <a href="tel:+1234567890" className="hover:text-secondary transition duration-300">
-                📞 +1-XXX-XXXXXXX
+                📞 +91-8979903752
               </a>
             </p>
-            <p className="text-blue-100">📍 Canada</p>
+            <p className="text-blue-100">📍 Canada\India</p>
           </div>
         </div>
 
