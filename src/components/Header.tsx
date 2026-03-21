@@ -1,44 +1,60 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useAuth } from '@clerk/nextjs';
+import { UserButton, SignInButton } from "@clerk/nextjs";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isSignedIn } = useAuth();
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50 backdrop-blur bg-opacity-95">
-      <nav className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition duration-300">
-          <Image 
-            src="/logo.jpeg" 
-            alt="That's My French Logo" 
-            width={50} 
-            height={50}
-            className="rounded-lg"
-            priority
-          />
-          <span className="font-bold text-lg text-primary hidden sm:inline">That's My French</span>
-        </Link>
+    <header className="bg-white shadow-md sticky top-0 z-50">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-20 items-center">
+          
+          {/* LOGO SECTION */}
+          <Link href="/" className="flex items-center gap-2">
+            <Image 
+              src="/logo.jpeg" 
+              alt="Logo" 
+              width={45} 
+              height={45} 
+              className="rounded-lg"
+            />
+            <span className="font-bold text-xl text-primary hidden md:block">
+              That is My French
+            </span>
+          </Link>
 
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-primary text-2xl hover:text-secondary transition focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? '✕' : '☰'}
-        </button>
+          {/* NAVBAR LINKS */}
+          <div className="hidden md:flex items-center gap-8">
+            <Link href="/" className="text-gray-700 hover:text-primary font-medium">Home</Link>
+            <Link href="/courses" className="text-gray-700 hover:text-primary font-medium">Courses</Link>
+            <Link href="/reviews" className="text-gray-700 hover:text-primary font-medium">Reviews</Link>
+            <Link href="/about" className="text-gray-700 hover:text-primary font-medium">About</Link>
+          </div>
 
-        <ul className={`${
-          isOpen ? 'flex' : 'hidden'
-        } md:flex gap-2 md:gap-8 items-center absolute md:relative top-16 md:top-0 left-0 right-0 bg-white md:bg-transparent flex-col md:flex-row p-4 md:p-0 rounded-b-lg md:rounded-none`}>
-          <li><Link href="/" className="text-gray-700 hover:text-secondary transition duration-300 font-medium">Home</Link></li>
-          <li><Link href="/courses" className="text-gray-700 hover:text-secondary transition duration-300 font-medium">Courses</Link></li>
-          <li><Link href="/reviews" className="text-gray-700 hover:text-secondary transition duration-300 font-medium">Reviews</Link></li>
-          <li><Link href="/about" className="text-gray-700 hover:text-secondary transition duration-300 font-medium">About</Link></li>
-          <li className="md:ml-4"><a href="/contact" className="btn-primary text-sm md:text-base">Get Started</a></li>
-        </ul>
+          {/* AUTH SECTION */}
+          <div className="flex items-center gap-4">
+            {isSignedIn ? (
+              <UserButton />
+            ) : (
+              <SignInButton mode="modal">
+                <button className="bg-blue-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-800 transition-all">
+                  Get Started
+                </button>
+              </SignInButton>
+            )}
+
+            {/* Mobile Toggle */}
+            <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} /></svg>
+            </button>
+          </div>
+        </div>
       </nav>
     </header>
   );
