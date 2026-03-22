@@ -146,7 +146,7 @@ export default function EnhancedFAQ() {
             <a href="/contact" className="btn-primary bg-white text-primary hover:bg-gray-100">
               Contact Us
             </a>
-            <a href="mailto:info@thatsmyfrench.com" className="btn-secondary bg-secondary text-primary hover:bg-amber-400">
+            <a href="mailto:thatismyfrench@gmail.com" className="btn-secondary bg-secondary text-primary hover:bg-amber-400">
               Email Support
             </a>
           </div>

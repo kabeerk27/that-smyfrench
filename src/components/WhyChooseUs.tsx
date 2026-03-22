@@ -5,7 +5,7 @@ export default function WhyChooseUs() {
     {
       icon: "👨‍🏫",
       title: "Expert Instructors",
-      description: "Certified professionals with 10+ years of teaching experience"
+      description: "Certified professionals with 5+ years of teaching experience"
     },
     {
       icon: "📊",

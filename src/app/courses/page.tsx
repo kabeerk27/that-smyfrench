@@ -17,7 +17,7 @@ export default function CoursesPage() {
         "Exam tips and strategies",
         "Lifetime resource access"
       ],
-      prerequisite: "Basic French knowledge (A2-B1 level)",
+      prerequisite: "Zero Knowledge of French",
       batchSize: "Small batches (3-4 students)"
     },
     {
@@ -35,7 +35,7 @@ export default function CoursesPage() {
         "Mock tests and evaluations",
         "Personalized feedback"
       ],
-      prerequisite: "A2-B1 French level",
+      prerequisite: "Zero Knowledge of French",
       batchSize: "Small batches (3-4 students)"
     }
 ];

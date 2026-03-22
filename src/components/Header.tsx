@@ -35,6 +35,7 @@ export default function Header() {
             <Link href="/courses" className="text-gray-700 hover:text-primary font-medium">Courses</Link>
             <Link href="/reviews" className="text-gray-700 hover:text-primary font-medium">Reviews</Link>
             <Link href="/about" className="text-gray-700 hover:text-primary font-medium">About</Link>
+            <Link href="/contact" className="hover:text-blue-600 font-medium text-gray-700">Contact Us</Link>
           </div>
 
           {/* AUTH SECTION */}
@@ -44,7 +45,7 @@ export default function Header() {
             ) : (
               <SignInButton mode="modal">
                 <button className="bg-blue-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-800 transition-all">
-                  Get Started
+                  Login / Sign Up
                 </button>
               </SignInButton>
             )}

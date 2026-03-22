@@ -16,9 +16,9 @@ export default function Home() {
       <FeaturedCourses />
       <ProcessSection />
       <LearningOutcomes />
+      <InstructorProfiles />
       <WhyChooseUs />
       <TrustBadges />
-      <InstructorProfiles />
       <ReviewsPreview />
       <EnhancedFAQ />
       <CTASection />
