@@ -8,7 +8,7 @@ export default function InstructorProfiles() {
       image: "/arish.jpg", 
       specialty: "TEF/TCF Specialist",
       bio: "C1–C2 level French language professional with a Bachelor’s degree in French and over 5 years of experience in the field. Experienced as a live French interpreter at Teleperformance, with a strong background of working across multiple institutes, consistently delivering high-quality training and results.",
-      rating: 4.8,
+      rating: 4.9,
       students: 230,
       courses: ["TEF/TCF Intensive", "Advanced Pronunciation"],
       highlighted: true
@@ -41,7 +41,7 @@ export default function InstructorProfiles() {
       image: "/shabana.jpeg",
       specialty: "Structured Exam Prep",
       bio: "C1-certified French trainer with a Bachelor’s and Master’s degree in French and over 7 years of experience in the language domain. Currently working as an SPS Associate (French) at Amazon for the past 4 years. Specializes in training students for TEF and DELF with a structured, results-driven approach.",
-      rating: 4.8,
+      rating: 4.9,
       students: 140,
       courses: ["TEF/TCF"],
       highlighted: false
@@ -62,8 +62,8 @@ export default function InstructorProfiles() {
       role: "A2 B1 Trainer",
       image: "/maaz.jpg",
       specialty: "A2 B1 Expert",
-      bio: ".",
-      rating: 4.8,
+      bio: "French language professional with a Bachelor’s degree in French, specializing in guiding A1–A2 learners toward achieving B1 level. Focused on building strong foundations in grammar and comprehension through a structured approach.",
+      rating: 4.7,
       students: 125,
       courses: ["A2-B1 Comprehensive"],
       highlighted: false

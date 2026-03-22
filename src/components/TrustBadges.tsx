@@ -6,7 +6,7 @@ export default function TrustBadges() {
       icon: "🏅",
       title: "Certified Instructors",
       desc: "All teachers certified and experienced",
-      stat: "10+ Years"
+      stat: "5+ Years"
     },
     {
       icon: "📊",
@@ -33,7 +33,7 @@ export default function TrustBadges() {
       stat: "50+ Countries"
     },
     {
-      icon: "💯",
+      icon: "🎯",
       title: "Quality Guaranteed",
       desc: "Satisfaction or your money back",
       stat: "100% Guaranteed"
