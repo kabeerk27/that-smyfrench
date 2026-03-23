@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { MailIcon, PhoneIcon, LocationIcon, StarIcon } from './AnimatedIconsLibrary';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -54,17 +55,22 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="font-bold text-lg mb-4 text-secondary">Get in Touch</h4>
-            <p className="text-blue-100 mb-2">
-              <a href="mailto:thatismyfrench@gmail.com" className="hover:text-secondary transition duration-300">
-                📧 thatismyfrench@gmail.com
+            <div className="flex items-center gap-3 mb-3 text-blue-100 hover:text-secondary transition duration-300">
+              <MailIcon size="md" animated={true} className="text-secondary flex-shrink-0" />
+              <a href="mailto:thatismyfrench@gmail.com" className="hover:underline">
+                thatismyfrench@gmail.com
               </a>
-            </p>
-            <p className="text-blue-100 mb-2">
-              <a href="tel:+1234567890" className="hover:text-secondary transition duration-300">
-                📞 +91-8979903752
+            </div>
+            <div className="flex items-center gap-3 mb-3 text-blue-100 hover:text-secondary transition duration-300">
+              <PhoneIcon size="md" animated={true} className="text-secondary flex-shrink-0" />
+              <a href="tel:+918979903752" className="hover:underline">
+                +91-8979903752
               </a>
-            </p>
-            <p className="text-blue-100">📍 Canada\India</p>
+            </div>
+            <div className="flex items-center gap-3 text-blue-100">
+              <LocationIcon size="md" animated={true} className="text-secondary flex-shrink-0" />
+              <p>Canada / India</p>
+            </div>
           </div>
         </div>
 
@@ -81,8 +87,14 @@ export default function Footer() {
               <div className="text-xs text-blue-100">Success Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-secondary">4.9⭐</div>
-              <div className="text-xs text-blue-100">Rating</div>
+              <div className="flex justify-center mb-1">
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <StarIcon key={i} size="sm" animated={false} className="text-secondary" />
+                  ))}
+                </div>
+              </div>
+              <div className="text-xs text-blue-100">4.9 Rating</div>
             </div>
             <div className="hidden md:block text-center">
               <div className="text-2xl font-bold text-secondary">15+</div>

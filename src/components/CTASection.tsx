@@ -1,9 +1,13 @@
 'use client';
 
+import { MobileIcon, InstructorIcon, ChartIcon } from './AnimatedIconsLibrary';
+import { FloatingBubbles } from './FloatingParticles';
+
 export default function CTASection() {
   return (
-    <section className="py-20 bg-gradient-to-r from-secondary via-yellow-300 to-secondary">
-      <div className="max-w-4xl mx-auto px-4">
+    <section className="py-20 bg-gradient-to-r from-secondary via-yellow-300 to-secondary relative overflow-hidden">
+      <FloatingBubbles />
+      <div className="max-w-4xl mx-auto px-4 relative z-10">
         {/* Main CTA */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
@@ -32,12 +36,14 @@ export default function CTASection() {
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {[
-            { icon: "📅", title: "Flexible Schedule", desc: "Learn at your own pace" },
-            { icon: "👨‍🏫", title: "Expert Teachers", desc: "Native speakers & certified" },
-            { icon: "💯", title: "95% Success", desc: "Industry-leading results" }
+            { icon: MobileIcon, title: "Flexible Schedule", desc: "Learn at your own pace" },
+            { icon: InstructorIcon, title: "Expert Teachers", desc: "Native speakers & certified" },
+            { icon: ChartIcon, title: "95% Success", desc: "Industry-leading results" }
           ].map((benefit, idx) => (
-            <div key={idx} className="bg-white bg-opacity-80 p-6 rounded-lg text-center">
-              <div className="text-4xl mb-3">{benefit.icon}</div>
+            <div key={idx} className="bg-white bg-opacity-80 p-6 rounded-lg text-center hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <div className="flex justify-center mb-4">
+                <benefit.icon size="lg" animated={true} />
+              </div>
               <h3 className="font-bold text-primary mb-2">{benefit.title}</h3>
               <p className="text-gray-700">{benefit.desc}</p>
             </div>

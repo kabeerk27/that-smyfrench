@@ -1,10 +1,12 @@
 'use client';
 
+import { SpeakingIcon, ListeningIcon, BookIcon, WritingIcon, CheckIcon } from './AnimatedIconsLibrary';
+
 export default function LearningOutcomes() {
   const outcomes = [
     {
       category: "Speaking",
-      icon: "🗣️",
+      icon: SpeakingIcon,
       skills: [
         "Fluent conversational French",
         "Native-like pronunciation",
@@ -15,7 +17,7 @@ export default function LearningOutcomes() {
     },
     {
       category: "Listening",
-      icon: "👂",
+      icon: ListeningIcon,
       skills: [
         "Understand native speakers",
         "Follow movies & podcasts",
@@ -26,7 +28,7 @@ export default function LearningOutcomes() {
     },
     {
       category: "Reading",
-      icon: "📖",
+      icon: BookIcon,
       skills: [
         "Read French literature",
         "Understand news articles",
@@ -37,7 +39,7 @@ export default function LearningOutcomes() {
     },
     {
       category: "Writing",
-      icon: "✍️",
+      icon: WritingIcon,
       skills: [
         "Write fluently & correctly",
         "Create professional emails",
@@ -59,12 +61,14 @@ export default function LearningOutcomes() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {outcomes.map((outcome, idx) => (
             <div key={idx} className={`bg-gradient-to-br ${outcome.color} text-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105`}>
-              <div className="text-5xl mb-4">{outcome.icon}</div>
+              <div className="flex justify-center mb-4">
+                <outcome.icon size="xl" animated={true} className="text-white" />
+              </div>
               <h3 className="text-2xl font-bold mb-4">{outcome.category}</h3>
               <ul className="space-y-3">
                 {outcome.skills.map((skill, sidx) => (
                   <li key={sidx} className="flex items-start gap-2 text-sm">
-                    <span className="text-lg">✓</span>
+                    <CheckIcon size="sm" animated={false} className="text-white flex-shrink-0 mt-0.5" />
                     <span>{skill}</span>
                   </li>
                 ))}

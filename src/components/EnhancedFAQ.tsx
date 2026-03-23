@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { RocketIcon, BookIcon, ClockIcon, WinnersIcon } from './AnimatedIconsLibrary';
 
 export default function EnhancedFAQ() {
   const [active, setActive] = useState<number>(0);
@@ -8,7 +9,7 @@ export default function EnhancedFAQ() {
   const faqs = [
     {
       category: "Getting Started",
-      icon: "🚀",
+      icon: RocketIcon,
       questions: [
         {
           q: "What if I have no prior French experience?",
@@ -22,7 +23,7 @@ export default function EnhancedFAQ() {
     },
     {
       category: "Courses",
-      icon: "📚",
+      icon: BookIcon,
       questions: [
         {
           q: "What courses are available?",
@@ -36,7 +37,7 @@ export default function EnhancedFAQ() {
     },
     {
       category: "Schedule & Flexibility",
-      icon: "⏰",
+      icon: ClockIcon,
       questions: [
         {
           q: "What if I can't attend a live class?",
@@ -50,7 +51,7 @@ export default function EnhancedFAQ() {
     },
     {
       category: "Exams & Certification",
-      icon: "🏆",
+      icon: WinnersIcon,
       questions: [
         {
           q: "Is your certification recognized?",
@@ -77,7 +78,7 @@ export default function EnhancedFAQ() {
           {faqs.map((category, catIdx) => (
             <div key={catIdx} className="card">
               <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-secondary">
-                <span className="text-3xl">{category.icon}</span>
+                <category.icon size="lg" animated={true} />
                 <h3 className="text-xl font-bold text-primary">{category.category}</h3>
               </div>
               
@@ -111,7 +112,7 @@ export default function EnhancedFAQ() {
           {faqs.map((category, catIdx) => (
             <div key={catIdx} className="card">
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">{category.icon}</span>
+                <category.icon size="lg" animated={true} />
                 <h3 className="font-bold text-primary">{category.category}</h3>
               </div>
               
